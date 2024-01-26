@@ -1,0 +1,56 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #050505;
+}
+  
+li a {
+    display: block;
+    color: #ffffff;
+    padding: 8px 16px;
+    text-decoration: none;
+    grid-row-end: auto;
+    max-height: 0;
+    overflow: hidden;
+    padding-left: 30px;
+    transition: max-height 0.4s ease;
+}
+  
+li a.active {
+    background-color: #aa0457;
+    color: rgb(241, 240, 240);
+}
+  
+li a:hover:not(.active) {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+}
+
+div {
+    position: relative;
+}
+
+.checkbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+p {
+    max-height: 0;
+    overflow: hidden;
+    padding-left: 30px;
+    transition: max-height 0.4s ease;
+    font-family: "Habibi", serif;
+}
+
+.content > * {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: all 0.6s ease;
+}
