@@ -17,7 +17,24 @@ li a {
     padding-left: 30px;
     transition: max-height 0.4s ease;
 }
-  
+
+* { box-sizing: border-box; }
+
+.content ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.content a {
+  color: white;
+  display: block;
+  white-space: nowrap;
+  text-decoration: none;
+  border-bottom: 1px solid #999;
+  padding: 5px;
+}
+
 li a.active {
     background-color: #aa0457;
     color: rgb(241, 240, 240);
@@ -96,6 +113,9 @@ p {
 label img {
     height: 100px;
     width: 100px;
+    position: relative;
+    margin-left: -1px;
+    left: -1px;
 }
 * { box-sizing: border-box; }
 .menus {
@@ -131,7 +151,7 @@ EDIT ON
   right: 18px;
   top: 12px;
 }
-.tab [type="radio"] {
+.menu [type="radio"] {
   position: absolute;
   top: 0;
   left: 0;
@@ -171,7 +191,7 @@ EDIT ON
   opacity: 1;
 }
 
-.close-tab {
+.close-menu {
   position: absolute;
   z-index: -1;
   top: 0;
@@ -179,10 +199,10 @@ EDIT ON
   width: 100%;
   height: 100%;
 }
-.close-tab label {
+.close-menu label {
   background: #333;
   color: white;
 }
-[type="radio"]:checked ~ label ~ .close-tab {
+[type="radio"]:checked ~ label ~ .close-menu {
   z-index: 3;
 }
