@@ -13,7 +13,7 @@ li a {
     text-decoration: none;
     grid-row-end: auto;
     max-height: 0;
-    overflow: hidden;
+    
     padding-left: 30px;
     transition: max-height 0.4s ease;
 }
@@ -21,18 +21,23 @@ li a {
 * { box-sizing: border-box; }
 
 .content ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #050505;
 }
 
 .content a {
-  color: white;
   display: block;
-  white-space: nowrap;
-  text-decoration: none;
-  border-bottom: 1px solid #999;
-  padding: 5px;
+    color: #ffffff;
+    padding: 8px 16px;
+    text-decoration: none;
+    grid-row-end: auto;
+    max-height: 0;
+    
+    padding-left: 30px;
+    transition: max-height 0.4s ease;
 }
 
 li a.active {
