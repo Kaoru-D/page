@@ -1,4 +1,3 @@
-
 export function TwitterFollowCard({userName,name,isFollowing}){
     
     <article className='tw-followCard'>
