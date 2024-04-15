@@ -22,13 +22,14 @@ export function TwitterFollowCard({ userName = '#', children/*name*/, initialIsF
                 <div className='tw-followCard-info'>
                     <strong>{children}</strong>
                     <span className='tw-followCard-userName'>@{userName}</span>
-                    <aside>
-                        <span className={sigueClassName}>
-                            Te sigue
-                        </span>
-                    </aside>
+
                 </div>
             </header>
+            <aside>
+                <span className={sigueClassName}>
+                    Te sigue
+                </span>
+            </aside>
             <aside>
 
                 <button className={buttonClassName} onClick={handleClick}>

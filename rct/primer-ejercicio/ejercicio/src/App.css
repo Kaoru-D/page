@@ -78,15 +78,18 @@ body {
 
 .tw-followCard-sigue {
   display: none;
+  align-self: stretch;
 }
 
 .tw-followCard-sigue.is-following {
-  display: flex;
+  display: inline-flex;
   background-color: transparent;
   color: #fff;
-  border-radius: 555px;
-  margin: right 22px;;
+  opacity: 60%;
+  border: 1px solid;
+  border-radius: 8px;
+  margin-right: auto;
   font-size: x-small;
-  flex-direction: column;
-
+  padding: 2px 2px;
+  
 }
