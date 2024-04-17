@@ -8,5 +8,8 @@
   "keywords": [],
   "author": "Daniel",
   "license": "ISC",
-  "description": "RecordandoReact"
+  "description": "RecordandoReact",
+  "dependencies": {
+    "canvas-confetti": "1.9.2"
+  }
 }
