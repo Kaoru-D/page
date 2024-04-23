@@ -5,13 +5,14 @@ import { Square } from './Components/Square.jsx'
 import { TURNS } from './constants.js'
 import { checkWinnerFrom, checkEndGame } from './logic/board.js'
 import { WinnerModal } from './Components/WinnerModal.jsx'
-import { saveGameToStorage, resetGameStorage } from './logic/storage/indez.js'
+import { saveGameToStorage, resetGameStorage } from './logic/storage/index.js'
 
 function App() {
 
   const [board, setBoard] = useState(() => {
     const boarFromStorage = window.localStorage.getItem('board')
-    return boarFromStorage ? JSON.parse(boarFromStorage) : !Array(9).fill(null)
+    if (boarFromStorage) return JSON.parse(boarFromStorage) 
+    return !Array(9).fill(null)
   })
 
   const [turn, setTurn] = useState(() => {
@@ -60,6 +61,8 @@ function App() {
 
   }
 
+
+  
   return (
     <main className='board'>
       <h1>Tricky</h1>

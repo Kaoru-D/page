@@ -1,6 +1,6 @@
 export const saveGameToStorage=({board,turn})=>{
-    windows.localStorage.setItem('board',JSON.stringify(newBoard))
-    windows.localStorage.setItem('turn',newTurn)
+    windows.localStorage.setItem('board',JSON.stringify(board))
+    windows.localStorage.setItem('turn',turn)
 }
 
 export const resetGameStorage=()=>{
