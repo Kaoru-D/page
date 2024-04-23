@@ -1,12 +1,12 @@
 export const TURNS = {
     X: '❌',
-    O: '⚪'
+    O: '🔵'
 }
 
 
 
 export const WINNER_COMBOS = [
-    [0, 1, 2],
+    [0, 1, 2],//Búsqueda de matriz concatenando
     [3, 4, 5],
     [6, 7, 8],
     [0, 3, 6],
