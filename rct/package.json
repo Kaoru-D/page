@@ -10,13 +10,14 @@
   "license": "ISC",
   "description": "RecordandoReact",
   "dependencies": {
-    "canvas-confetti": "1.9.2"
+    "canvas-confetti": "1.9.2",
+    "file-saver": "^2.0.5"
   },
   "devDependencies": {
+    "@types/file-saver": "^2.0.7",
     "standard": "^17.1.0"
   },
   "eslintConfig": {
     "extends": "./node_modules/standard/eslintrc.json"
   }
 }
-
