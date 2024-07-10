@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import conffeti from "canvas-confetti"
 
 import { Square } from './Components/Square.jsx'
@@ -10,30 +10,36 @@ import { saveGameToStorage, resetGameStorage } from './logic/storage/index.js'
 function App() {
 
   const [board, setBoard] = useState(() => {
-    const boardFromStorage = window.localStorage.getItem('board')
-    if (boardFromStorage) return JSON.parse(boardFromStorage) 
-    return !Array(9).fill(null)
+     const boardFromStorage = window.localStorage.getItem('board') 
+    if (boardFromStorage) return JSON.parse(boardFromStorage)
+    return Array(9).fill(null)
   })
 
+
   const [turn, setTurn] = useState(() => {
-    const turnFromStorage = window.localStorage.getItem('turn')
+     const turnFromStorage = window.localStorage.getItem('turn') 
     return turnFromStorage ?? TURNS.X
   })
 
+  
+
   const [winner, setWinner] = useState(null)
-
-
 
   const resetGame = () => {
     setBoard(Array(9).fill(null))
     setTurn(TURNS.X)
     setWinner(null)
-    resetGameStorage()
 
+    resetGameStorage()
   }
 
-
-
+  useEffect(() => {
+    localStorage.setItem("board", JSON.stringify(board))
+  }, [board])
+  useEffect(() => {
+    localStorage.setItem("turn", JSON.stringify(turn))
+  }, [turn])
+  
   const updateBoard = (index) => {
 
     if (board[index] || winner) return
@@ -45,11 +51,10 @@ function App() {
     const newTurn = turn === TURNS.X ? TURNS.O : TURNS.X
     setTurn(newTurn)
 
-    saveGameToStorage({
+    /* saveGameToStorage({
       board: newBoard,
       turn: newTurn
-    })
-
+    }) */
 
     const newWinner = checkWinnerFrom(newBoard)
     if (newWinner) {
@@ -62,7 +67,7 @@ function App() {
   }
 
 
-  
+
   return (
     <main className='board'>
       <h1>Tricky</h1>
