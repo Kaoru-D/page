@@ -33,13 +33,8 @@ function App() {
     resetGameStorage()
   }
 
-  useEffect(() => {
-    localStorage.setItem("board", JSON.stringify(board))
-  }, [board])
-  useEffect(() => {
-    localStorage.setItem("turn", JSON.stringify(turn))
-  }, [turn])
-
+  
+  
   const updateBoard = (index) => {
 
     if (board[index] || winner) return
@@ -50,11 +45,13 @@ function App() {
 
     const newTurn = turn === TURNS.X ? TURNS.O : TURNS.X
     setTurn(newTurn)
-
-    /* saveGameToStorage({
+    useEffect(() => {
+    
+    
+     saveGameToStorage({
       board: newBoard,
       turn: newTurn
-    }) */
+    }) },[turn,board])
 
     const newWinner = checkWinnerFrom(newBoard)
     if (newWinner) {
