@@ -37,7 +37,7 @@ function App() {
     localStorage.setItem("board", JSON.stringify(board))
   }, [board])
   useEffect(() => {
-    localStorage.setItem("turn", JSON.stringify(turn))
+    localStorage.setItem("turn", turn)
   }, [turn])
 
   const updateBoard = (index) => {
